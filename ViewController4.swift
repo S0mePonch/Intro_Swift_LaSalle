@@ -11,10 +11,10 @@ import Lottie
 class ViewController4: UIViewController {
 
     
+    @IBOutlet weak var imageCheck: UIImageView!
     @IBOutlet weak var opView01: UILabel!
     @IBOutlet weak var opView02: UILabel!
     @IBOutlet weak var opView03: UILabel!
-    @IBOutlet weak var viewAnswer: UILabel!
     @IBOutlet weak var btnOutlet01: UIButton!
     @IBOutlet weak var btnOutlet02: UIButton!
     @IBOutlet weak var btnOutlet03: UIButton!
@@ -35,6 +35,17 @@ class ViewController4: UIViewController {
     }
     
     
+    @IBAction func btnRestart(_ sender: UIButton) {
+        score = 0
+        lifesGames = 5
+        Lifes.text = "Vidas: " + String(lifesGames)
+        Score.text = "Score: " + String(score)
+        
+        self.btnOutlet01.isEnabled = true
+        self.btnOutlet02.isEnabled = true
+        self.btnOutlet03.isEnabled = true
+        
+    }
     
     @IBAction func btnOp01(_ sender: UIButton) {
         var respuesta = sender.currentTitle ?? ""
@@ -58,13 +69,13 @@ class ViewController4: UIViewController {
             self.present(dialogMessage, animated: true, completion: nil)
         }
         if String(respuesta) == String(resultado){
-            viewAnswer.text = "CORRECTO"
+            imageCheck.image = UIImage(named: "check")
             score = score+1
             Score.text = "Score: " + String(score)
             principal()
             
         }else{
-            viewAnswer.text = "INCORRECTO"
+            imageCheck.image = UIImage(named: "error")
             lifesGames = lifesGames-1
             Lifes.text = "Vidas: "+String(lifesGames)
             principal()
@@ -94,13 +105,13 @@ class ViewController4: UIViewController {
             self.present(dialogMessage, animated: true, completion: nil)
         }
         if String(respuesta) == String(resultado){
-            viewAnswer.text = "CORRECT"
+            imageCheck.image = UIImage(named: "check")
             score = score+1
             Score.text = "Score: "+String(score)
             principal()
             
         }else{
-            viewAnswer.text = "INCORRECT"
+            imageCheck.image = UIImage(named: "error")
             lifesGames = lifesGames-1
             Lifes.text = "Vidas: "+String(lifesGames)
             principal()
@@ -131,18 +142,21 @@ class ViewController4: UIViewController {
             self.present(dialogMessage, animated: true, completion: nil)
         }
         if String(respuesta) == String(resultado){
-            viewAnswer.text = "CORRECTO"
+            imageCheck.image = UIImage(named: "check")
             score = score+1
             Score.text = "Score: "+String(score)
             principal()
         }else{
-            viewAnswer.text = "INCORRECTO"
+            imageCheck.image = UIImage(named: "error")
             lifesGames = lifesGames-1
             Lifes.text = "Vidas: "+String(lifesGames)
             principal()
         }
         
     }
+    
+    
+    
     
     func principal(){
         let random1 = String(Int.random(in: 1...100))

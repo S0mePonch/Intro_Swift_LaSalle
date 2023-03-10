@@ -250,13 +250,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Correcto/Incorrecto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSV-VQ-KIp">
-                                <rect key="frame" x="88" y="371" width="252" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIS-0e-8hb">
+                                <rect key="frame" x="374" y="405" width="46" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="arrow.triangle.2.circlepath.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="btnRestart:" destination="cEY-bS-N3j" eventType="touchUpInside" id="hM5-Av-gHA"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gfp-DX-kM5">
+                                <rect key="frame" x="94" y="306" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Mi-0I-luf"/>
                     </view>
@@ -266,19 +272,20 @@
                         <outlet property="btnOutlet01" destination="xDc-HR-Xy2" id="UZ1-mz-Tuh"/>
                         <outlet property="btnOutlet02" destination="220-Wq-vjQ" id="FFJ-bZ-Qwa"/>
                         <outlet property="btnOutlet03" destination="n0U-Cr-c14" id="fWg-48-qFh"/>
+                        <outlet property="imageCheck" destination="gfp-DX-kM5" id="6sF-pk-JO9"/>
                         <outlet property="opView01" destination="kHN-48-mXs" id="aWH-3e-HF1"/>
                         <outlet property="opView02" destination="nav-cw-V56" id="ggI-Nn-3uD"/>
                         <outlet property="opView03" destination="5Iv-xy-gC5" id="3sA-gj-iC9"/>
-                        <outlet property="viewAnswer" destination="aSV-VQ-KIp" id="ERh-y0-clr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KJ2-fM-XD4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873" y="-62"/>
+            <point key="canvasLocation" x="1872.8971962616822" y="-62.203023758099356"/>
         </scene>
     </scenes>
     <resources>
         <image name="Space" width="66.666664123535156" height="118.33333587646484"/>
+        <image name="arrow.triangle.2.circlepath.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
